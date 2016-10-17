@@ -26,7 +26,7 @@ class SpinnerView: AbstractAnimationView ,CAAnimationDelegate{
     
     let duration : TimeInterval = 0.8
     let radius : CGFloat = 30;
-    let lineWidth : CGFloat = 3;
+    let lineWidth : CGFloat = 4;
     
     let startAngle : CGFloat = CGFloat.pi * 3 / 2
     
@@ -39,7 +39,7 @@ class SpinnerView: AbstractAnimationView ,CAAnimationDelegate{
 
         //setup layer
         self.animationLayer.lineWidth = 0
-        self.animationLayer.strokeColor = UIColor.darkGray.cgColor
+        self.animationLayer.strokeColor = UIColor.black.cgColor
         self.animationLayer.fillColor = UIColor.clear.cgColor
         self.animationLayer.transform = CATransform3DMakeRotation(startAngle, 0, 0, 1)
         
@@ -76,6 +76,9 @@ class SpinnerView: AbstractAnimationView ,CAAnimationDelegate{
         //end animation (line width shrink)
         let lineShrinkAnim = AnimationHelper.animation(keyPath: "lineWidth", from: lineWidth, to: 0, duration: 0.3)
         completeAnim = lineShrinkAnim
+        
+        //repeat duration
+        self.timeUntilStop = 2.22
         
     }
     

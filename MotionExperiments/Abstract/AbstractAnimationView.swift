@@ -18,20 +18,21 @@ class AbstractAnimationView: UIView {
     let animationLayer = CAShapeLayer()
     weak var delegate : AnimationViewDelegate?
     var isAnimating : Bool = false
+    var timeUntilStop : TimeInterval = 0 
     
     required init(){
         
         super.init(frame:.zero)
         self.backgroundColor = UIColor.white
+        animationLayer.fillColor = UIColor.clear.cgColor
+        animationLayer.strokeColor = UIColor.clear.cgColor
         self.layer.addSublayer(animationLayer)
-        prepare()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.white
-        self.layer.addSublayer(animationLayer)
-        prepare()
+        self.layer.addSublayer(animationLayer) 
     }
     
     func prepare(){

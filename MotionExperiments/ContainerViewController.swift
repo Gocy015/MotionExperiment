@@ -55,12 +55,18 @@ class ContainerViewController: UIViewController ,AnimationViewDelegate {
     
     
     override func viewDidLayoutSubviews() {
-        contentView?.frame = view.bounds
+        if let ct = contentView{
+            ct.frame = view.bounds
+        } 
     }
 
     func startAnimationLoop(){
-        contentView?.start()
-        contentView?.perform(#selector(AbstractAnimationView.stop), with: nil, afterDelay: 2.2)
+        if let ct = contentView{
+            ct.start()
+            if ct.timeUntilStop > 0 {
+                ct.perform(#selector(AbstractAnimationView.stop), with: nil, afterDelay:ct.timeUntilStop)
+            }
+        } 
     }
     
     
@@ -70,8 +76,7 @@ class ContainerViewController: UIViewController ,AnimationViewDelegate {
         
     }
     func animationDidFinished() {
-        self.perform(#selector(self.startAnimationLoop), with: nil, afterDelay: 0.5)
-         
+        self.perform(#selector(self.startAnimationLoop), with: nil, afterDelay: 0.6)
     }
     
     

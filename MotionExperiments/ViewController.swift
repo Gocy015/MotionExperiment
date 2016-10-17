@@ -24,6 +24,8 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.title = "Motions"
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,6 +72,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
     func generateData(){
         let spinner = ViewInfo("Spinner",viewClass:SpinnerView.self)
         data.append(spinner)
+        
+        let graph = ViewInfo("Graph",viewClass:GraphView.self)
+        data.append(graph)
         
         tableView.reloadData()
     }
