@@ -76,6 +76,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let graph = ViewInfo("Graph",viewClass:GraphView.self)
         data.append(graph)
         
+        let searchIcon = ViewInfo("Search Icon",viewClass:SearchIcon.self)
+        data.append(searchIcon)
+        
         tableView.reloadData()
     }
     

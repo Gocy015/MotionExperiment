@@ -18,12 +18,6 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
     }
     */
     
-    override var frame: CGRect{
-        didSet{
-//            prepare()
-        }
-    }
-    
     var values : [CGFloat] = [2,32,-16,32,16,64,128,64,-8]
     private var positions : [CGPoint] = []
     var currentPath : UIBezierPath!
