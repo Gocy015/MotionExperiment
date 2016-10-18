@@ -40,7 +40,8 @@ class ContainerViewController: UIViewController ,AnimationViewDelegate {
         super.viewDidAppear(animated)
         contentView?.prepare()
         startAnimationLoop()
-       
+        
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

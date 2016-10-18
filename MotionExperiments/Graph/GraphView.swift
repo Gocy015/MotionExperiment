@@ -29,11 +29,20 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
     var slowerDuration : TimeInterval = 0
     var normalDuration : TimeInterval = 0
     let pointLayer = CAShapeLayer()
-    
     var lastLinePath : UIBezierPath!
     var lastPointPath : UIBezierPath!
     
+    var topLayer : CAShapeLayer!
+    var midLayer : CAShapeLayer!
+    var bottomLayer : CAShapeLayer!
+    
+    var topY : CGFloat = 0
+    var bottomY : CGFloat = 0
+    
     override func prepare() {
+        
+        calculatePositions()
+        
         self.animationLayer.path = nil
         pointLayer.path = nil
         if pointLayer.superlayer == nil {
@@ -42,13 +51,13 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
             pointLayer.backgroundColor = UIColor.clear.cgColor
         }
         
-        calculatePositions()
         
         pointLayer.lineWidth = normalLineWidth
         pointLayer.strokeColor = UIColor.black.cgColor
         pointLayer.fillColor = self.backgroundColor?.cgColor
-        
  
+        
+        animationLayer.backgroundColor = UIColor.clear.cgColor
         animationLayer.strokeColor = UIColor.black.cgColor
         animationLayer.lineWidth = normalLineWidth
         
@@ -57,6 +66,8 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         slowerDuration = duration * 1.6;
         
         normalDuration = (totalAnimDuration - slowerDuration * 2.0) / TimeInterval(positions.count - 2)
+        
+        
         
         self.timeUntilStop = -1
     }
@@ -67,6 +78,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         self.clean()
         
         self.drawLine(toIndex: 1, duration: slowerDuration)
+        self.drawReferenceLine()
         
         delegate?.animationDidStart()
     }
@@ -74,6 +86,9 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
     override func stop() {
         super.stop()
     }
+    
+    
+    //MARK: - Helpers
 
     func clean(){
         self.animationLayer.path = nil
@@ -87,6 +102,10 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         
         animationLayer.path = lastLinePath.cgPath
         
+        topLayer.strokeEnd = 0
+        midLayer.strokeEnd = 0
+        bottomLayer.strokeEnd = 0
+        
     }
     
     func calculatePositions(){
@@ -95,7 +114,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         positions.removeAll()
         
         let width = bounds.size.width
-        let height = min(bounds.size.height, width / 3)
+        let height = min(bounds.size.height, width / 2.5)
         
         let widthPerElement = width / CGFloat(values.count)
         let max = values.max()!
@@ -115,10 +134,14 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
             x += widthPerElement
         }
         
+        topY = -height + yOffset
+        bottomY = yOffset
+        
+        addReferenceLine()
     }
     
     
-    //MARK : - Drawing
+    //MARK: - Drawing
     func drawLine(toIndex:Int ,duration:TimeInterval){
         if toIndex >= positions.count {
             return;
@@ -138,9 +161,9 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
             }
             self.drawLine(toIndex: toIndex + 1, duration: dur)
             if(toIndex == 1){
-                self.drawPoint(at: 0 ,duration:dur * 2.2)
+                self.drawPoint(at: 0 ,duration:dur * 2.22)
             }
-            self.drawPoint(at: toIndex ,duration:dur * 2.2)
+            self.drawPoint(at: toIndex ,duration:dur * 2.22)
         }
     }
     
@@ -156,10 +179,10 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         
         self.layer.addSublayer(pointAnimLayer)
         
-        let goLarge = AnimationHelper.animation(keyPath: "lineWidth", from: 0, to: normalLineWidth * 1.65, duration: duration)
+        let goLarge = AnimationHelper.animation(keyPath: "lineWidth", from: 0, to: normalLineWidth * 1.7, duration: duration)
         goLarge.timingFunction = CAMediaTimingFunction(controlPoints: 0.3, 0, 0.7, 1)
         
-        let goNormal = AnimationHelper.animation(keyPath: "lineWidth", from: normalLineWidth * 1.65, to: normalLineWidth , duration: duration)
+        let goNormal = AnimationHelper.animation(keyPath: "lineWidth", from: normalLineWidth * 1.7, to: normalLineWidth , duration: duration)
         goNormal.timingFunction = CAMediaTimingFunction(controlPoints: 0.27, 0, 0.33, 1.4)
         
         let animGroup = CAAnimationGroup()
@@ -175,6 +198,55 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         pointAnimLayer.add(animGroup, forKey: "graph.pointanimation\(at)")
         
         
+    }
+    
+    func addReferenceLine(){
+        let midY = (topY + bottomY) / 2.0
+        
+        if topLayer == nil {
+            
+            topLayer = referenceLineLayer(at:topY)
+            midLayer = referenceLineLayer(at:midY)
+            bottomLayer = referenceLineLayer(at:bottomY)
+        }
+        
+    }
+    
+    func referenceLineLayer(at:CGFloat) -> CAShapeLayer{
+        let layer = CAShapeLayer()
+        layer.frame = self.layer.bounds
+        self.layer.insertSublayer(layer, below: animationLayer)
+        
+        layer.backgroundColor = UIColor.clear.cgColor
+        
+        layer.strokeColor = UIColor.black.withAlphaComponent(0.1).cgColor
+        layer.strokeEnd = 0
+        layer.lineWidth = 1
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: layer.bounds.size.width,y:at))
+        path.addLine(to: CGPoint(x: 0, y: at))
+        
+        layer.path = path.cgPath
+        
+        return layer
+    }
+    
+    func drawReferenceLine(){
+        let timingFunc = CAMediaTimingFunction(controlPoints: 0.38, 0.12, 0.6, 1)
+        let topAnim = AnimationHelper.animation(keyPath: "strokeEnd", from: 0, to: 1, duration: totalAnimDuration * 2 / 3)
+        topAnim.timingFunction = timingFunc
+        topAnim.beginTime = 0
+
+        let midAnim = topAnim.copy() as! CABasicAnimation
+        midAnim.beginTime = CACurrentMediaTime() + totalAnimDuration / 6.0
+        
+        let bottomAnim = topAnim.copy() as! CABasicAnimation
+        bottomAnim.beginTime = CACurrentMediaTime() + totalAnimDuration / 3.0
+        
+        topLayer.add(topAnim, forKey: "graphview.toprefline")
+        midLayer.add(midAnim, forKey: "graphview.midrefline")
+        bottomLayer.add(bottomAnim, forKey: "graphview.bottomrefline")
     }
     
     func addPoint(at:Int){
@@ -224,7 +296,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         return path
     }
     
-    //MARK : - CAAnimation Delegate
+    //MARK: - CAAnimation Delegate
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if let animLayer = anim.value(forKey: "targetLayer") as? CALayer{
             animLayer.removeAllAnimations()
