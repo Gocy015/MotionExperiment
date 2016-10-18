@@ -235,8 +235,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
     func drawReferenceLine(){
         let timingFunc = CAMediaTimingFunction(controlPoints: 0.38, 0.12, 0.6, 1)
         let topAnim = AnimationHelper.animation(keyPath: "strokeEnd", from: 0, to: 1, duration: totalAnimDuration * 2 / 3)
-        topAnim.timingFunction = timingFunc
-        topAnim.beginTime = 0
+        topAnim.timingFunction = timingFunc 
 
         let midAnim = topAnim.copy() as! CABasicAnimation
         midAnim.beginTime = CACurrentMediaTime() + totalAnimDuration / 6.0

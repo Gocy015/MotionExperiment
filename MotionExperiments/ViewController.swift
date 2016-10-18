@@ -79,6 +79,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let searchIcon = ViewInfo("Search Icon",viewClass:SearchIcon.self)
         data.append(searchIcon)
         
+        let newtonCradle = ViewInfo("Newton Cradle",viewClass:NewtonCradle.self)
+        data.append(newtonCradle)
+        
         tableView.reloadData()
     }
     

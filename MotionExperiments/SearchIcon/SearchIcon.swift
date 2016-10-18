@@ -99,11 +99,11 @@ class SearchIcon: AbstractAnimationView {
     }
     
     override func start() {
-        
+        super.start()
     }
     
     override func stop() {
-        
+        super.stop()
     }
     
     
@@ -141,7 +141,7 @@ class SearchIcon: AbstractAnimationView {
                 let shrinkGrow = AnimationHelper.animation(keyPath: "lineWidth", from: 0, to: self.closeWidth, duration: self.duration/3)
                 shrinkGrow.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
                 self.innerLayer.add(shrinkGrow, forKey: "searchicon.closegrow")
-
+                
             })
             
         }else{

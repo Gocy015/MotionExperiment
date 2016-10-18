@@ -38,4 +38,25 @@ class AnimationHelper: NSObject {
         
         return animations
     }
+    
+    static func generateAnimationGroup(_ animations:CABasicAnimation ... , removeOnCompletion:Bool = false) -> CAAnimationGroup{
+        
+        var begin : CFTimeInterval = 0
+        for anim in animations {
+            anim.beginTime = begin
+            begin += anim.duration
+        }
+        
+        let group = CAAnimationGroup()
+        group.animations = animations
+        group.duration = animations.last!.beginTime + animations.last!.duration
+        
+        if !removeOnCompletion {
+            group.isRemovedOnCompletion = false
+            group.fillMode = kCAFillModeForwards
+        }
+        
+        return group
+        
+    }
 }
