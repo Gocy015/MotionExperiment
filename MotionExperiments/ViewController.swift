@@ -62,10 +62,13 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let cls = data[indexPath.row].ViewClass
-        let vc = ContainerViewController()
-        vc.contentView = cls.init()
-        self.show(vc, sender: nil)
+        if let viewCls = data[indexPath.row].viewClass{
+            let vc = ContainerViewController()
+            vc.contentView = viewCls.init()
+            self.show(vc, sender: nil)
+        }else if let vcClass = data[indexPath.row].viewControllerClass{
+            self.show(vcClass.init(), sender: nil)
+        }
     }
     
     //MARK: - Helpers
@@ -81,6 +84,10 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         
         let newtonCradle = ViewInfo("Newton Cradle",viewClass:NewtonCradle.self)
         data.append(newtonCradle)
+        
+        let add = ViewInfo("Add",viewControllerClass:AddViewController.self)
+        data.append(add)
+    
         
         tableView.reloadData()
     }

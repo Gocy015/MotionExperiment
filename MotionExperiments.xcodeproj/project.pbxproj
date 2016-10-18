@@ -18,6 +18,7 @@
 		C30F14811DB4C0E400314E6C /* SearchIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F14801DB4C0E400314E6C /* SearchIcon.swift */; };
 		C3C00C691DB5C3EB0057E059 /* UILabel+CustomInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C681DB5C3EB0057E059 /* UILabel+CustomInit.swift */; };
 		C3C00C751DB610250057E059 /* NewtonCradle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C741DB610250057E059 /* NewtonCradle.swift */; };
+		C3C00C781DB629D40057E059 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C771DB629D40057E059 /* AddViewController.swift */; };
 		C3E771C31DAF7C1B00BD4992 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */; };
 		C3E771C61DAF80AF00BD4992 /* AbstractAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E771C51DAF80AF00BD4992 /* AbstractAnimationView.swift */; };
 		C3E771C91DAF81D300BD4992 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E771C81DAF81D300BD4992 /* AnimationHelper.swift */; };
@@ -37,6 +38,7 @@
 		C30F14801DB4C0E400314E6C /* SearchIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchIcon.swift; sourceTree = "<group>"; };
 		C3C00C681DB5C3EB0057E059 /* UILabel+CustomInit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+CustomInit.swift"; sourceTree = "<group>"; };
 		C3C00C741DB610250057E059 /* NewtonCradle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewtonCradle.swift; sourceTree = "<group>"; };
+		C3C00C771DB629D40057E059 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		C3E771C51DAF80AF00BD4992 /* AbstractAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractAnimationView.swift; sourceTree = "<group>"; };
 		C3E771C81DAF81D300BD4992 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				C30F147C1DB46C3600314E6C /* Graph */,
 				C30F147F1DB4C0DA00314E6C /* SearchIcon */,
 				C3C00C731DB610180057E059 /* NewtonCradle */,
+				C3C00C761DB629BF0057E059 /* Add */,
 				C302CA421DAF76AB00928F29 /* AppDelegate.swift */,
 				C302CA441DAF76AB00928F29 /* ViewController.swift */,
 				C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */,
@@ -128,6 +131,15 @@
 				C3C00C741DB610250057E059 /* NewtonCradle.swift */,
 			);
 			path = NewtonCradle;
+			sourceTree = "<group>";
+		};
+		C3C00C761DB629BF0057E059 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				C3C00C771DB629D40057E059 /* AddViewController.swift */,
+			);
+			name = Add;
+			path = NewtonCradle/Add;
 			sourceTree = "<group>";
 		};
 		C3E771C41DAF809D00BD4992 /* Abstract */ = {
@@ -222,6 +234,7 @@
 			files = (
 				C3C00C751DB610250057E059 /* NewtonCradle.swift in Sources */,
 				C302CA451DAF76AB00928F29 /* ViewController.swift in Sources */,
+				C3C00C781DB629D40057E059 /* AddViewController.swift in Sources */,
 				C3C00C691DB5C3EB0057E059 /* UILabel+CustomInit.swift in Sources */,
 				C3E771C91DAF81D300BD4992 /* AnimationHelper.swift in Sources */,
 				C3E771C61DAF80AF00BD4992 /* AbstractAnimationView.swift in Sources */,

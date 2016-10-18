@@ -10,12 +10,21 @@ import UIKit
 
 class ViewInfo: NSObject {
     var title : String
-    var ViewClass : AbstractAnimationView.Type
+    var viewClass : AbstractAnimationView.Type?
+    var viewControllerClass : UIViewController.Type?
     
     init(_ title:String , viewClass:AbstractAnimationView.Type){
         self.title = title
-        self.ViewClass = viewClass
-        
+        self.viewClass = viewClass
+        self.viewControllerClass = nil
         super.init()
     }
+    
+    init(_ title:String , viewControllerClass:UIViewController.Type){
+        self.title = title
+        self.viewClass = nil
+        self.viewControllerClass = viewControllerClass
+        super.init()
+    }
+    
 }
