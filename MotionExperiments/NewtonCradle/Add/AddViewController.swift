@@ -15,7 +15,12 @@ class AddViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.view.backgroundColor = UIColor(colorLiteralRed: 22.0/256, green: 108.0/256, blue: 109.0/256, alpha: 1)
+        self.view.backgroundColor = UIColor.colorWithAbsolute(red: 22, green: 108, blue: 109, alpha: 1)
+        self.title = "Add"
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.bgTapped))
+        self.view .addGestureRecognizer(tap)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,6 +28,18 @@ class AddViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let buttonRadius : CGFloat = 22
+        let buttonFrame = CGRect(x: view.bounds.size.width/2 - buttonRadius, y: view.bounds.size.height - 5 * buttonRadius, width: 2 * buttonRadius, height: 2 * buttonRadius)
+        let button = ButtonInputTextField(buttonFrame: buttonFrame)
+        
+        self.view.addSubview(button)
+    }
+    
+    
+    func bgTapped(){
+        NSLog("Background tapped")
+    }
 
     /*
     // MARK: - Navigation
