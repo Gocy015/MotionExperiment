@@ -88,6 +88,8 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let add = ViewInfo("Add",viewControllerClass:AddViewController.self)
         data.append(add)
     
+        let volume = ViewInfo("Volume" ,viewClass:Volume.self)
+        data.append(volume)
         
         tableView.reloadData()
     }
