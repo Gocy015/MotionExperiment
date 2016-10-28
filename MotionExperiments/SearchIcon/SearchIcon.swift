@@ -26,9 +26,9 @@ class SearchIcon: AbstractAnimationView {
     let length : CGFloat = 32
     let closeWidth : CGFloat = 6
     let barLength : CGFloat = 22
-    let barWidth : CGFloat = 8
+    let barWidth : CGFloat = 6.6
     
-    let searchPadding : CGFloat = 6.6;
+    let searchPadding : CGFloat = 8;
     
     let duration : TimeInterval = 0.5
      
@@ -121,23 +121,32 @@ class SearchIcon: AbstractAnimationView {
         
         if inSearch {
             
+            animationLayer.removeAllAnimations()
             let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: M_PI_4, to: 0, duration: duration)
             rotate.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             self.animationLayer.add(rotate, forKey: "searchicon.rotateright")
             
+            barLayer.lineWidth = 0
             let barShrink = AnimationHelper.animation(keyPath: "lineWidth", from: barWidth, to: 0, duration: duration)
             barShrink.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             self.barLayer.add(barShrink, forKey: "serachicon.barshrink")
             
             let searchShrink = AnimationHelper.animation(keyPath: "transform", from:NSValue(caTransform3D:CATransform3DIdentity), to: NSValue(caTransform3D:shrinkAtCenter), duration: self.duration*2/3 ,removeOnCompletion: true)
+            
             searchShrink.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             
+            self.innerLayer.transform = shrinkAtCenter
             self.innerLayer.add(searchShrink, forKey: "searchicon.searchshrink")
 
             Timer.scheduledTimer(withTimeInterval: duration*2/3, repeats: false, block: { (_) in
- 
+  
+                CATransaction.begin()
+                CATransaction.setDisableActions(true)
+                self.innerLayer.transform = CATransform3DIdentity
                 self.innerLayer.path = self.closePath.cgPath
+                CATransaction.commit()
                 
+                self.innerLayer.lineWidth = self.closeWidth
                 let shrinkGrow = AnimationHelper.animation(keyPath: "lineWidth", from: 0, to: self.closeWidth, duration: self.duration/3)
                 shrinkGrow.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
                 self.innerLayer.add(shrinkGrow, forKey: "searchicon.closegrow")
@@ -146,15 +155,18 @@ class SearchIcon: AbstractAnimationView {
             
         }else{
             
-            let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: 0, to: M_PI_4, duration: duration)
+            animationLayer.removeAllAnimations()
+            let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: 0, to: M_PI_4, duration: duration ,removeOnCompletion: false)
             rotate.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             self.animationLayer.add(rotate, forKey: "searchicon.rotateleft")
             
+            innerLayer.lineWidth = 0
             let shrinkClose = AnimationHelper.animation(keyPath: "lineWidth", from: closeWidth, to: 0, duration: duration/3)
             shrinkClose.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             innerLayer.add(shrinkClose, forKey: "searchicon.closeshrink")
             
             
+            barLayer.lineWidth = barWidth
             let barShrink = AnimationHelper.animation(keyPath: "lineWidth", from: 0, to: barWidth, duration: duration)
             barShrink.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             self.barLayer.add(barShrink, forKey: "serachicon.bargrow")
@@ -162,9 +174,12 @@ class SearchIcon: AbstractAnimationView {
             
             Timer.scheduledTimer(withTimeInterval: duration/3, repeats: false, block: { (_) in
                 
+                CATransaction.begin()
+                CATransaction.setDisableActions(true)
                 self.innerLayer.path = self.searchPath.cgPath
-                
-                let searchGrow = AnimationHelper.animation(keyPath: "transform", from: NSValue(caTransform3D:shrinkAtCenter), to: NSValue(caTransform3D:CATransform3DIdentity), duration: self.duration*2/3)
+                self.innerLayer.transform = CATransform3DIdentity
+                CATransaction.commit()
+                let searchGrow = AnimationHelper.animation(keyPath: "transform", from: NSValue(caTransform3D:shrinkAtCenter), to: NSValue(caTransform3D:CATransform3DIdentity), duration: self.duration*2/3,removeOnCompletion: true)
                 searchGrow.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0.6, 0.3 , 1)
 
                 self.innerLayer.add(searchGrow, forKey: "searchicon.searchgrow")

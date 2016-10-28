@@ -151,7 +151,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         
         let lineAnim = AnimationHelper.bezierPathAnimation(from: lastLinePath.copy() as! UIBezierPath, to: newPath, duration: duration)
         lastLinePath = newPath
-        
+        animationLayer.path = newPath.cgPath
         animationLayer.add(lineAnim, forKey: "graph.lineanimation\(toIndex)")
         
         Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
@@ -178,6 +178,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         pointAnimLayer.path = pointAnimPath.cgPath
         
         self.layer.addSublayer(pointAnimLayer)
+        pointAnimLayer.lineWidth = normalLineWidth
         
         let goLarge = AnimationHelper.animation(keyPath: "lineWidth", from: 0, to: normalLineWidth * 1.7, duration: duration)
         goLarge.timingFunction = CAMediaTimingFunction(controlPoints: 0.3, 0, 0.7, 1)
@@ -233,8 +234,13 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
     }
     
     func drawReferenceLine(){
+        
+        topLayer.removeAllAnimations()
+        midLayer.removeAllAnimations()
+        bottomLayer.removeAllAnimations()
+        
         let timingFunc = CAMediaTimingFunction(controlPoints: 0.38, 0.12, 0.6, 1)
-        let topAnim = AnimationHelper.animation(keyPath: "strokeEnd", from: 0, to: 1, duration: totalAnimDuration * 2 / 3)
+        let topAnim = AnimationHelper.animation(keyPath: "strokeEnd", from: 0, to: 1, duration: totalAnimDuration * 2 / 3 ,removeOnCompletion: false)
         topAnim.timingFunction = timingFunc 
 
         let midAnim = topAnim.copy() as! CABasicAnimation
@@ -242,6 +248,7 @@ class GraphView: AbstractAnimationView ,CAAnimationDelegate {
         
         let bottomAnim = topAnim.copy() as! CABasicAnimation
         bottomAnim.beginTime = CACurrentMediaTime() + totalAnimDuration / 3.0
+        
         
         topLayer.add(topAnim, forKey: "graphview.toprefline")
         midLayer.add(midAnim, forKey: "graphview.midrefline")

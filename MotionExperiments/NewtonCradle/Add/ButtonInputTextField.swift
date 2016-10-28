@@ -19,7 +19,7 @@ import UIKit
  When changing the apperance of the keyboard(changing keyboard input type) , .UIKeyboardWillShow will also be sent,
  and because the background path is already in an expanded state , it will perform a simple animation to adapt to new keyboard height.
  */
-class ButtonInputTextField: UIView {
+class ButtonInputTextField: UIView ,CAAnimationDelegate {
 
     var buttonFrame = CGRect.zero
     private let button = UIButton()
@@ -253,8 +253,6 @@ class ButtonInputTextField: UIView {
         }
         
         
-        //bg
-        bgLayer.path = finalPath.cgPath
         
         let fromPath = UIBezierPath(ovalIn: currentRect)
         
@@ -265,6 +263,8 @@ class ButtonInputTextField: UIView {
         
         let bgAnim = AnimationHelper.generateAnimationGroup(bgShrinkAnim,bgNarrowAnim)
         bgAnim.beginTime = CACurrentMediaTime() + 0.2 * duration
+        bgAnim.delegate = self
+        bgAnim.setValue(finalPath, forKey: "finalPath")
         bgLayer.add(bgAnim, forKey: "add.bgshrinkanimation")
         
         
@@ -306,6 +306,13 @@ class ButtonInputTextField: UIView {
             return textField
         }
         return nil
+    }
+    
+    //MARK:- Animation Delegate
+    func animationDidStart(_ anim: CAAnimation) {
+        if let finalPath = anim.value(forKey: "finalPath") as? UIBezierPath{
+            bgLayer.path = finalPath.cgPath
+        }
     }
 
 }

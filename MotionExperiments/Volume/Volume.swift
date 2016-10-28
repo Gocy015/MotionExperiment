@@ -316,22 +316,22 @@ class Volume: AbstractAnimationView {
         shortPath.apply(transform)
         
         if show {
-            let fadein = AnimationHelper.animation(keyPath: "opacity", from: 0, to: 1, duration: 0.2, removeOnCompletion: true)
+            let fadein = AnimationHelper.animation(keyPath: "opacity", from: 0, to: 1, duration: 0.2)
             muteOverlayLayer.opacity = 1
             muteOverlayLayer.add(fadein, forKey: "volume.mutefadein")
             
             muteLayer.path = longPath.cgPath
-            let lineGrow = AnimationHelper.animation(keyPath: "path", from: shortPath.cgPath, to: longPath.cgPath, duration: 0.2, removeOnCompletion: true)
+            let lineGrow = AnimationHelper.animation(keyPath: "path", from: shortPath.cgPath, to: longPath.cgPath, duration: 0.2)
             muteLayer.add(lineGrow, forKey: "volume.mutegrow")
             
         }else{
-            let fadeout = AnimationHelper.animation(keyPath: "opacity", from: 1, to: 0, duration: 0.2, removeOnCompletion: true)
+            let fadeout = AnimationHelper.animation(keyPath: "opacity", from: 1, to: 0, duration: 0.2)
             muteOverlayLayer.opacity = 0
             muteOverlayLayer.add(fadeout, forKey: "volume.mutefadeout")
             
             
             muteLayer.path = shortPath.cgPath
-            let lineShrink = AnimationHelper.animation(keyPath: "path", from: longPath.cgPath, to: shortPath.cgPath, duration: 0.2, removeOnCompletion: true)
+            let lineShrink = AnimationHelper.animation(keyPath: "path", from: longPath.cgPath, to: shortPath.cgPath, duration: 0.2)
             muteLayer.add(lineShrink, forKey: "volume.muteshrink")
         }
     }

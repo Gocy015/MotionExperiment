@@ -10,7 +10,7 @@ import UIKit
 
 class AnimationHelper: NSObject {
     
-    static func animation(keyPath:String ,from:Any? ,to:Any? ,duration :TimeInterval,removeOnCompletion:Bool = false) -> CABasicAnimation{
+    static func animation(keyPath:String ,from:Any? ,to:Any? ,duration :TimeInterval,removeOnCompletion:Bool = true) -> CABasicAnimation{
         let anim = CABasicAnimation(keyPath:keyPath)
         anim.duration = duration
         anim.fromValue = from
@@ -26,7 +26,13 @@ class AnimationHelper: NSObject {
     
     static func bezierPathAnimation(from:UIBezierPath ,to:UIBezierPath ,duration:TimeInterval) -> CABasicAnimation{
         
-        return self.animation(keyPath: "path", from: from.cgPath, to: to.cgPath, duration: duration ,removeOnCompletion: false)
+        return self.animation(keyPath: "path", from: from.cgPath, to: to.cgPath, duration: duration ,removeOnCompletion: true)
+    }
+    
+    
+    static func bezierPathAnimation(from:UIBezierPath ,to:UIBezierPath ,duration:TimeInterval ,removeOnCompletion:Bool = true) -> CABasicAnimation{
+        
+        return self.animation(keyPath: "path", from: from.cgPath, to: to.cgPath, duration: duration ,removeOnCompletion: removeOnCompletion)
     }
     
     static func generateAnimationSequence(_ animations:CABasicAnimation ...) -> [CABasicAnimation]?{
@@ -39,7 +45,7 @@ class AnimationHelper: NSObject {
         return animations
     }
     
-    static func generateAnimationGroup(_ animations:CABasicAnimation ... , removeOnCompletion:Bool = false) -> CAAnimationGroup{
+    static func generateAnimationGroup(_ animations:CABasicAnimation ... , removeOnCompletion:Bool = true) -> CAAnimationGroup{
         
         var begin : CFTimeInterval = 0
         for anim in animations {

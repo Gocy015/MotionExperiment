@@ -42,6 +42,8 @@ class SpinnerView: AbstractAnimationView ,CAAnimationDelegate{
         self.animationLayer.strokeColor = UIColor.black.cgColor
         self.animationLayer.fillColor = UIColor.clear.cgColor
         self.animationLayer.transform = CATransform3DMakeRotation(startAngle, 0, 0, 1)
+        self.animationLayer.strokeStart = 0.95
+        self.animationLayer.strokeEnd = 1
         
         let centerRect = CGRect(x: 0, y: 0, width: 2*radius, height: 2*radius)
         let circlePath = UIBezierPath(ovalIn: centerRect)
@@ -84,6 +86,7 @@ class SpinnerView: AbstractAnimationView ,CAAnimationDelegate{
     
     override func start() {
         super.start()
+        animationLayer.lineWidth = lineWidth
         animationLayer.add(startAnim, forKey: "spinner.start")
         animationLayer.add(spinAnim, forKey: "spinner.spinning")
         
@@ -93,6 +96,7 @@ class SpinnerView: AbstractAnimationView ,CAAnimationDelegate{
     override func stop() {
         super.stop()
         completeAnim.delegate = self
+        animationLayer.lineWidth = 0
         animationLayer.add(completeAnim, forKey: "spinner.complete")
         
     }
