@@ -91,6 +91,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let volume = ViewInfo("Volume" ,viewClass:Volume.self)
         data.append(volume)
         
+        let buttonTouch = ViewInfo("Button Touch",viewClass:ButtonTouch.self)
+        data.append(buttonTouch)
+        
         tableView.reloadData()
     }
     
