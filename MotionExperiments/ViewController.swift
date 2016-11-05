@@ -94,6 +94,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let buttonTouch = ViewInfo("Button Touch",viewClass:ButtonTouch.self)
         data.append(buttonTouch)
         
+        let slides = ViewInfo("10 - Slides",viewControllerClass:SlidesViewController.self)
+        data.append(slides)
+        
         tableView.reloadData()
     }
     

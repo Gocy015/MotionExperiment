@@ -18,6 +18,10 @@
 		C30F14811DB4C0E400314E6C /* SearchIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F14801DB4C0E400314E6C /* SearchIcon.swift */; };
 		C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328FD981DB8A70200D7351C /* ButtonInputTextField.swift */; };
 		C386F7FA1DC1E8C8009E0AFB /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386F7F91DC1E8C8009E0AFB /* Volume.swift */; };
+		C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39FD21D1DCB28890065A0E2 /* GradientView.swift */; };
+		C3B42E081DC73DAC00FE4CAA /* SlidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */; };
+		C3B42E0A1DC73ECF00FE4CAA /* SlideableViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */; };
+		C3B42E0C1DC7467500FE4CAA /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E0B1DC7467500FE4CAA /* SlidesViewController.swift */; };
 		C3BF12211DC449A300BDCBD1 /* ButtonTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF12201DC449A300BDCBD1 /* ButtonTouch.swift */; };
 		C3BF12231DC4501500BDCBD1 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF12221DC4501500BDCBD1 /* CALayer+Extensions.swift */; };
 		C3C00C691DB5C3EB0057E059 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C681DB5C3EB0057E059 /* UIView+Extensions.swift */; };
@@ -42,6 +46,10 @@
 		C30F14801DB4C0E400314E6C /* SearchIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchIcon.swift; sourceTree = "<group>"; };
 		C328FD981DB8A70200D7351C /* ButtonInputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonInputTextField.swift; sourceTree = "<group>"; };
 		C386F7F91DC1E8C8009E0AFB /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		C39FD21D1DCB28890065A0E2 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesView.swift; sourceTree = "<group>"; };
+		C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideableViewContainer.swift; sourceTree = "<group>"; };
+		C3B42E0B1DC7467500FE4CAA /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
 		C3BF12201DC449A300BDCBD1 /* ButtonTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTouch.swift; sourceTree = "<group>"; };
 		C3BF12221DC4501500BDCBD1 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		C3C00C681DB5C3EB0057E059 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -92,6 +100,7 @@
 				C3C00C761DB629BF0057E059 /* Add */,
 				C386F7F81DC1E8A4009E0AFB /* Volume */,
 				C3BF121F1DC4499600BDCBD1 /* ButtonTouch */,
+				C3B42E061DC73D9B00FE4CAA /* Slides */,
 				C302CA421DAF76AB00928F29 /* AppDelegate.swift */,
 				C302CA441DAF76AB00928F29 /* ViewController.swift */,
 				C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */,
@@ -141,6 +150,17 @@
 				C386F7F91DC1E8C8009E0AFB /* Volume.swift */,
 			);
 			path = Volume;
+			sourceTree = "<group>";
+		};
+		C3B42E061DC73D9B00FE4CAA /* Slides */ = {
+			isa = PBXGroup;
+			children = (
+				C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */,
+				C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */,
+				C3B42E0B1DC7467500FE4CAA /* SlidesViewController.swift */,
+				C39FD21D1DCB28890065A0E2 /* GradientView.swift */,
+			);
+			path = Slides;
 			sourceTree = "<group>";
 		};
 		C3BF121F1DC4499600BDCBD1 /* ButtonTouch */ = {
@@ -262,15 +282,19 @@
 			files = (
 				C3C00C751DB610250057E059 /* NewtonCradle.swift in Sources */,
 				C302CA451DAF76AB00928F29 /* ViewController.swift in Sources */,
+				C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */,
 				C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */,
 				C3C00C781DB629D40057E059 /* AddViewController.swift in Sources */,
 				C3C00C691DB5C3EB0057E059 /* UIView+Extensions.swift in Sources */,
+				C3B42E081DC73DAC00FE4CAA /* SlidesView.swift in Sources */,
 				C386F7FA1DC1E8C8009E0AFB /* Volume.swift in Sources */,
 				C3E771C91DAF81D300BD4992 /* AnimationHelper.swift in Sources */,
 				C3E771C61DAF80AF00BD4992 /* AbstractAnimationView.swift in Sources */,
 				C30F14811DB4C0E400314E6C /* SearchIcon.swift in Sources */,
+				C3B42E0C1DC7467500FE4CAA /* SlidesViewController.swift in Sources */,
 				C302CA431DAF76AB00928F29 /* AppDelegate.swift in Sources */,
 				C3E771C31DAF7C1B00BD4992 /* ContainerViewController.swift in Sources */,
+				C3B42E0A1DC73ECF00FE4CAA /* SlideableViewContainer.swift in Sources */,
 				C3BF12211DC449A300BDCBD1 /* ButtonTouch.swift in Sources */,
 				C302CA5B1DAF7B4800928F29 /* SpinnerView.swift in Sources */,
 				C302CA591DAF7AF400928F29 /* ViewInfo.swift in Sources */,
