@@ -73,25 +73,25 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
     
     //MARK: - Helpers
     func generateData(){
-        let spinner = ViewInfo("Spinner",viewClass:SpinnerView.self)
+        let spinner = ViewInfo("01 - Spinner",viewClass:SpinnerView.self)
         data.append(spinner)
         
-        let graph = ViewInfo("Graph",viewClass:GraphView.self)
+        let graph = ViewInfo("02 - Graph",viewClass:GraphView.self)
         data.append(graph)
         
-        let searchIcon = ViewInfo("Search Icon",viewClass:SearchIcon.self)
+        let searchIcon = ViewInfo("03 - Search Icon",viewClass:SearchIcon.self)
         data.append(searchIcon)
         
-        let newtonCradle = ViewInfo("Newton Cradle",viewClass:NewtonCradle.self)
+        let newtonCradle = ViewInfo("04 - Newton Cradle",viewClass:NewtonCradle.self)
         data.append(newtonCradle)
         
-        let add = ViewInfo("Add",viewControllerClass:AddViewController.self)
+        let add = ViewInfo("05 - Add",viewControllerClass:AddViewController.self)
         data.append(add)
     
-        let volume = ViewInfo("Volume" ,viewClass:Volume.self)
+        let volume = ViewInfo("06 - Volume" ,viewClass:Volume.self)
         data.append(volume)
         
-        let buttonTouch = ViewInfo("Button Touch",viewClass:ButtonTouch.self)
+        let buttonTouch = ViewInfo("07 - Button Touch",viewClass:ButtonTouch.self)
         data.append(buttonTouch)
         
         let slides = ViewInfo("10 - Slides",viewControllerClass:SlidesViewController.self)
