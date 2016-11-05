@@ -114,7 +114,7 @@ class ButtonTouch: AbstractAnimationView ,CAAnimationDelegate{
         
         let grow = AnimationHelper.animation(keyPath: "transform", from: NSValue(caTransform3D:CATransform3DIdentity), to:  NSValue(caTransform3D:transform), duration: duration)
         
-        
+        layer.transform = transform
         layer.add(fadeIn, forKey: "buttontouch.layer\(version)fadein")
         layer.add(grow, forKey: "buttontouch.layer\(version)grow")
         layer.add(fadeOut, forKey: "buttontouch.layer\(version)fadeout")
