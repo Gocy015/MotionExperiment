@@ -97,6 +97,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let slides = ViewInfo("10 - Slides",viewControllerClass:SlidesViewController.self)
         data.append(slides)
         
+        let lcd = ViewInfo("11 - LCD",viewClass:LCDView.self)
+        data.append(lcd)
+        
         tableView.reloadData()
     }
     

@@ -17,6 +17,8 @@
 		C30F147E1DB46C4700314E6C /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F147D1DB46C4700314E6C /* GraphView.swift */; };
 		C30F14811DB4C0E400314E6C /* SearchIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F14801DB4C0E400314E6C /* SearchIcon.swift */; };
 		C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328FD981DB8A70200D7351C /* ButtonInputTextField.swift */; };
+		C32A12221DDAE37200FD5F2B /* SingleLCDLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */; };
+		C32A12241DDAE90900FD5F2B /* LCDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A12231DDAE90900FD5F2B /* LCDView.swift */; };
 		C386F7FA1DC1E8C8009E0AFB /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386F7F91DC1E8C8009E0AFB /* Volume.swift */; };
 		C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39FD21D1DCB28890065A0E2 /* GradientView.swift */; };
 		C3B42E081DC73DAC00FE4CAA /* SlidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */; };
@@ -45,6 +47,8 @@
 		C30F147D1DB46C4700314E6C /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		C30F14801DB4C0E400314E6C /* SearchIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchIcon.swift; sourceTree = "<group>"; };
 		C328FD981DB8A70200D7351C /* ButtonInputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonInputTextField.swift; sourceTree = "<group>"; };
+		C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLCDLayer.swift; sourceTree = "<group>"; };
+		C32A12231DDAE90900FD5F2B /* LCDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDView.swift; sourceTree = "<group>"; };
 		C386F7F91DC1E8C8009E0AFB /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		C39FD21D1DCB28890065A0E2 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				C386F7F81DC1E8A4009E0AFB /* Volume */,
 				C3BF121F1DC4499600BDCBD1 /* ButtonTouch */,
 				C3B42E061DC73D9B00FE4CAA /* Slides */,
+				C32A121C1DDABBFA00FD5F2B /* LCD */,
 				C302CA421DAF76AB00928F29 /* AppDelegate.swift */,
 				C302CA441DAF76AB00928F29 /* ViewController.swift */,
 				C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */,
@@ -142,6 +147,15 @@
 				C30F14801DB4C0E400314E6C /* SearchIcon.swift */,
 			);
 			path = SearchIcon;
+			sourceTree = "<group>";
+		};
+		C32A121C1DDABBFA00FD5F2B /* LCD */ = {
+			isa = PBXGroup;
+			children = (
+				C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */,
+				C32A12231DDAE90900FD5F2B /* LCDView.swift */,
+			);
+			path = LCD;
 			sourceTree = "<group>";
 		};
 		C386F7F81DC1E8A4009E0AFB /* Volume */ = {
@@ -284,7 +298,9 @@
 				C302CA451DAF76AB00928F29 /* ViewController.swift in Sources */,
 				C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */,
 				C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */,
+				C32A12241DDAE90900FD5F2B /* LCDView.swift in Sources */,
 				C3C00C781DB629D40057E059 /* AddViewController.swift in Sources */,
+				C32A12221DDAE37200FD5F2B /* SingleLCDLayer.swift in Sources */,
 				C3C00C691DB5C3EB0057E059 /* UIView+Extensions.swift in Sources */,
 				C3B42E081DC73DAC00FE4CAA /* SlidesView.swift in Sources */,
 				C386F7FA1DC1E8C8009E0AFB /* Volume.swift in Sources */,
