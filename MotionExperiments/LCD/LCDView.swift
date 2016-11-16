@@ -19,26 +19,42 @@ class LCDView: AbstractAnimationView {
     */
     
     
-    let lcdLayer = SingleLCDLayer()
-    var counter = 1
+    let tensLayer = SingleLCDLayer()
+    let unitsLayer = SingleLCDLayer()
     
+    let lcdSize = CGSize(width: 70, height: 130)
     
     override func prepare() {
         
         self.backgroundColor = UIColor.black
-        self.layer.addSublayer(lcdLayer)
+        self.layer.addSublayer(tensLayer)
+        self.layer.addSublayer(unitsLayer)
         
-        lcdLayer.backgroundLineWidth = 8
-        lcdLayer.foregroundLineWidth = 15
-        lcdLayer.frame = CGRect(x: self.bounds.size.width/2 - 50, y: self.bounds.size.height/2 - 90 , width: 100, height: 180)
-        lcdLayer.drawBackground()
+        tensLayer.backgroundLineWidth = 5
+        tensLayer.foregroundLineWidth = 11
         
-        lcdLayer.draw(number: 0)
+        unitsLayer.backgroundLineWidth = 5
+        unitsLayer.foregroundLineWidth = 11
+        
+        let widthBetween = lcdSize.width / 3
+        
+        
+        
+        tensLayer.frame = CGRect(x: (self.bounds.size.width - 2 * lcdSize.width - widthBetween)/2 , y: self.bounds.size.height/2 - lcdSize.height/2 , width: lcdSize.width, height: lcdSize.height)
+        tensLayer.drawBackground()
+        
+        unitsLayer.frame = CGRect(x: tensLayer.frame.maxX + widthBetween , y: self.bounds.size.height/2 - lcdSize.height/2 , width: lcdSize.width, height: lcdSize.height)
+        unitsLayer.drawBackground()
+        
+        tensLayer.draw(number: 0)
+        unitsLayer.draw(number: 0)
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true){
             _ in
-            self.lcdLayer.draw(number: self.counter)
-            self.counter = (self.counter+1) % 10
+            
+            let random = Int(arc4random_uniform(100))
+            self.tensLayer.draw(number: random / 10)
+            self.unitsLayer.draw(number: random % 10)
             
         }
         

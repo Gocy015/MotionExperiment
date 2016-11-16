@@ -23,7 +23,7 @@ class SingleLCDLayer: CALayer {
     private var currentLineWidth : CGFloat = 0
     private var currentNumber : Int = -1
     
-    var animDuration : TimeInterval = 0.15
+    var animDuration : TimeInterval = 0.22
     
     private var linePadding : CGFloat{
         get{
@@ -64,20 +64,25 @@ class SingleLCDLayer: CALayer {
         
         createForegroundLayers()
         
+        self.addMask()
     }
     
-    
+    func addMask(){
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        let mask = UIBezierPath(roundedRect: self.bounds, cornerRadius: foregroundLineWidth/2 + 1)
+        maskLayer.path = mask.cgPath
+        
+        self.mask = maskLayer
+    }
     
     func initSublayers(){
         
         bgLayer.backgroundColor = UIColor.clear.cgColor
-//        fgLayer.backgroundColor = UIColor.clear.cgColor
         
-        bgLayer.fillColor = UIColor.lightGray.withAlphaComponent(0.3).cgColor
-//        fgLayer.fillColor = UIColor.white.cgColor
+        bgLayer.fillColor = UIColor.lightGray.withAlphaComponent(0.12).cgColor
         
         self.addSublayer(bgLayer)
-//        self.addSublayer(fgLayer)
         
     }
     
@@ -260,11 +265,11 @@ class SingleLCDLayer: CALayer {
     func ceil() -> UIBezierPath {
         
         let path = UIBezierPath()
-        let starting = CGPoint(x: linePadding - currentLineWidth/2, y: 0)
+        let starting = CGPoint(x: linePadding - currentLineWidth/2, y: (foregroundLineWidth-currentLineWidth)/2)
         path.move(to: starting)
         path.addLine(to: CGPoint(x: self.bounds.width - starting.x, y: starting.y))
-        path.addLine(to: CGPoint(x: self.bounds.width - starting.x - currentLineWidth, y: currentLineWidth))
-        path.addLine(to: CGPoint(x: starting.x + currentLineWidth, y: currentLineWidth))
+        path.addLine(to: CGPoint(x: self.bounds.width - starting.x - currentLineWidth, y: starting.y + currentLineWidth))
+        path.addLine(to: CGPoint(x: starting.x + currentLineWidth, y: starting.y + currentLineWidth))
         path.close()
         
         return path
@@ -290,7 +295,7 @@ class SingleLCDLayer: CALayer {
     }
     func floor() -> UIBezierPath{
         let path = UIBezierPath()
-        let starting = CGPoint(x: linePadding - currentLineWidth/2, y: self.bounds.size.height)
+        let starting = CGPoint(x: linePadding - currentLineWidth/2, y: self.bounds.size.height - (foregroundLineWidth-currentLineWidth)/2)
         path.move(to: starting)
         path.addLine(to: CGPoint(x: self.bounds.width - starting.x, y: starting.y))
         path.addLine(to: CGPoint(x: self.bounds.width - starting.x - currentLineWidth, y: starting.y - currentLineWidth))
@@ -303,7 +308,7 @@ class SingleLCDLayer: CALayer {
     
     func upperLeft() -> UIBezierPath{
         let path = UIBezierPath()
-        let starting = CGPoint(x: 0, y: linePadding - currentLineWidth/2)
+        let starting = CGPoint(x: (foregroundLineWidth-currentLineWidth)/2, y: linePadding - currentLineWidth/2)
         path.move(to: starting)
         path.addLine(to: CGPoint(x: starting.x, y: self.bounds.height/2 - linePadding))
         path.addLine(to: CGPoint(x: starting.x + currentLineWidth/2, y: self.bounds.height/2 - linePadding + currentLineWidth/2 ))
@@ -316,7 +321,7 @@ class SingleLCDLayer: CALayer {
     
     func upperRight() -> UIBezierPath{
         let path = UIBezierPath()
-        let starting = CGPoint(x: self.bounds.width, y: linePadding - currentLineWidth/2)
+        let starting = CGPoint(x: self.bounds.width - (foregroundLineWidth-currentLineWidth)/2, y: linePadding - currentLineWidth/2)
         path.move(to: starting)
         path.addLine(to: CGPoint(x: starting.x, y: self.bounds.height/2 - linePadding ))
         path.addLine(to: CGPoint(x: starting.x - currentLineWidth/2, y: self.bounds.height/2 - linePadding + currentLineWidth/2))
@@ -329,7 +334,7 @@ class SingleLCDLayer: CALayer {
 
     func lowerLeft() -> UIBezierPath{
         let path = UIBezierPath()
-        let starting = CGPoint(x: currentLineWidth/2, y: self.bounds.size.height/2 + linePadding - currentLineWidth/2)
+        let starting = CGPoint(x: currentLineWidth/2 + (foregroundLineWidth-currentLineWidth)/2, y: self.bounds.size.height/2 + linePadding - currentLineWidth/2)
         path.move(to: starting)
         path.addLine(to: CGPoint(x: starting.x - currentLineWidth/2, y: starting.y + currentLineWidth/2))
         path.addLine(to: CGPoint(x: starting.x - currentLineWidth/2, y: self.bounds.height - linePadding + currentLineWidth/2))
@@ -342,7 +347,7 @@ class SingleLCDLayer: CALayer {
     
     func lowerRight() -> UIBezierPath{
         let path = UIBezierPath()
-        let starting = CGPoint(x: self.bounds.size.width - currentLineWidth/2, y: self.bounds.size.height/2 + linePadding - currentLineWidth/2)
+        let starting = CGPoint(x: self.bounds.size.width - currentLineWidth/2 - (foregroundLineWidth-currentLineWidth)/2, y: self.bounds.size.height/2 + linePadding - currentLineWidth/2)
         path.move(to: starting)
         path.addLine(to: CGPoint(x: starting.x - currentLineWidth/2, y: starting.y + currentLineWidth/2))
         path.addLine(to: CGPoint(x: starting.x - currentLineWidth/2, y: self.bounds.height - linePadding + currentLineWidth/2 - currentLineWidth))
