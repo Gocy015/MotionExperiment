@@ -12,7 +12,7 @@ This is **NOT** an official copy ,all the timing functions & paths are from wild
 
 09.Logo(I don't think im gonna finish this)
 
-11.LCD
+<del>11.LCD</del>
 
 12.New Tweet(Quite easy , not going to do this)
 
