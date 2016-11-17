@@ -24,6 +24,20 @@ class AnimationHelper: NSObject {
         return anim
     }
     
+    static func keyframeAnimation(keyPath:String ,values:[Any]? ,keyTimes:[NSNumber]? ,duration :TimeInterval,removeOnCompletion:Bool = true) -> CAKeyframeAnimation{
+        let anim = CAKeyframeAnimation(keyPath: keyPath)
+        anim.values = values
+        anim.keyTimes = keyTimes
+        anim.duration = duration
+        
+        if !removeOnCompletion{
+            anim.isRemovedOnCompletion = false
+            anim.fillMode = kCAFillModeForwards
+        }
+        
+        return anim
+    }
+    
     static func bezierPathAnimation(from:UIBezierPath ,to:UIBezierPath ,duration:TimeInterval) -> CABasicAnimation{
         
         return self.animation(keyPath: "path", from: from.cgPath, to: to.cgPath, duration: duration ,removeOnCompletion: true)

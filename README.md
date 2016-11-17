@@ -14,9 +14,12 @@ This is **NOT** an official copy ,all the timing functions & paths are from wild
 
 <del>11.LCD</del>
 
+
 12.New Tweet(Quite easy , not going to do this)
 
-13.Syncing/Success Icon
+
+<del>13.Syncing/Success Icon</del>
+
 
 14.Counter
 

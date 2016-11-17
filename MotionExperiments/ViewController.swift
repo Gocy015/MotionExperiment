@@ -100,6 +100,9 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let lcd = ViewInfo("11 - LCD",viewClass:LCDView.self)
         data.append(lcd)
         
+        let sync = ViewInfo("13 - Syncing/Success Icon",viewClass:SyncSuccessIcon.self)
+        data.append(sync)
+        
         tableView.reloadData()
     }
     

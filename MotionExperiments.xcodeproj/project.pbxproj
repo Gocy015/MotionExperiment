@@ -20,6 +20,9 @@
 		C32A12221DDAE37200FD5F2B /* SingleLCDLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */; };
 		C32A12241DDAE90900FD5F2B /* LCDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A12231DDAE90900FD5F2B /* LCDView.swift */; };
 		C386F7FA1DC1E8C8009E0AFB /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386F7F91DC1E8C8009E0AFB /* Volume.swift */; };
+		C38D34EB1DDD4B6E00EFF692 /* SuccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38D34EA1DDD4B6E00EFF692 /* SuccessLayer.swift */; };
+		C39C362C1DDC5B3600B95BCB /* SyncArrowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */; };
+		C39C362E1DDC5F8300B95BCB /* SyncSuccessIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C362D1DDC5F8300B95BCB /* SyncSuccessIcon.swift */; };
 		C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39FD21D1DCB28890065A0E2 /* GradientView.swift */; };
 		C3B42E081DC73DAC00FE4CAA /* SlidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */; };
 		C3B42E0A1DC73ECF00FE4CAA /* SlideableViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */; };
@@ -50,6 +53,9 @@
 		C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLCDLayer.swift; sourceTree = "<group>"; };
 		C32A12231DDAE90900FD5F2B /* LCDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDView.swift; sourceTree = "<group>"; };
 		C386F7F91DC1E8C8009E0AFB /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		C38D34EA1DDD4B6E00EFF692 /* SuccessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessLayer.swift; sourceTree = "<group>"; };
+		C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncArrowLayer.swift; sourceTree = "<group>"; };
+		C39C362D1DDC5F8300B95BCB /* SyncSuccessIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncSuccessIcon.swift; sourceTree = "<group>"; };
 		C39FD21D1DCB28890065A0E2 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesView.swift; sourceTree = "<group>"; };
 		C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideableViewContainer.swift; sourceTree = "<group>"; };
@@ -106,6 +112,7 @@
 				C3BF121F1DC4499600BDCBD1 /* ButtonTouch */,
 				C3B42E061DC73D9B00FE4CAA /* Slides */,
 				C32A121C1DDABBFA00FD5F2B /* LCD */,
+				C39C362A1DDC545F00B95BCB /* SyncSuccessIcon */,
 				C302CA421DAF76AB00928F29 /* AppDelegate.swift */,
 				C302CA441DAF76AB00928F29 /* ViewController.swift */,
 				C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */,
@@ -164,6 +171,16 @@
 				C386F7F91DC1E8C8009E0AFB /* Volume.swift */,
 			);
 			path = Volume;
+			sourceTree = "<group>";
+		};
+		C39C362A1DDC545F00B95BCB /* SyncSuccessIcon */ = {
+			isa = PBXGroup;
+			children = (
+				C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */,
+				C39C362D1DDC5F8300B95BCB /* SyncSuccessIcon.swift */,
+				C38D34EA1DDD4B6E00EFF692 /* SuccessLayer.swift */,
+			);
+			path = SyncSuccessIcon;
 			sourceTree = "<group>";
 		};
 		C3B42E061DC73D9B00FE4CAA /* Slides */ = {
@@ -294,6 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38D34EB1DDD4B6E00EFF692 /* SuccessLayer.swift in Sources */,
+				C39C362C1DDC5B3600B95BCB /* SyncArrowLayer.swift in Sources */,
 				C3C00C751DB610250057E059 /* NewtonCradle.swift in Sources */,
 				C302CA451DAF76AB00928F29 /* ViewController.swift in Sources */,
 				C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */,
@@ -308,6 +327,7 @@
 				C3E771C61DAF80AF00BD4992 /* AbstractAnimationView.swift in Sources */,
 				C30F14811DB4C0E400314E6C /* SearchIcon.swift in Sources */,
 				C3B42E0C1DC7467500FE4CAA /* SlidesViewController.swift in Sources */,
+				C39C362E1DDC5F8300B95BCB /* SyncSuccessIcon.swift in Sources */,
 				C302CA431DAF76AB00928F29 /* AppDelegate.swift in Sources */,
 				C3E771C31DAF7C1B00BD4992 /* ContainerViewController.swift in Sources */,
 				C3B42E0A1DC73ECF00FE4CAA /* SlideableViewContainer.swift in Sources */,
