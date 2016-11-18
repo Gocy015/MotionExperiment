@@ -19,6 +19,9 @@
 		C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328FD981DB8A70200D7351C /* ButtonInputTextField.swift */; };
 		C32A12221DDAE37200FD5F2B /* SingleLCDLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */; };
 		C32A12241DDAE90900FD5F2B /* LCDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A12231DDAE90900FD5F2B /* LCDView.swift */; };
+		C34768911DDEEDAA000FAFAB /* NavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34768901DDEEDAA000FAFAB /* NavigationMenu.swift */; };
+		C34768931DDEEEA1000FAFAB /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34768921DDEEEA1000FAFAB /* ExampleViewController.swift */; };
+		C37072711DDEA77C00C18D7A /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37072701DDEA77C00C18D7A /* Counter.swift */; };
 		C386F7FA1DC1E8C8009E0AFB /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386F7F91DC1E8C8009E0AFB /* Volume.swift */; };
 		C38D34EB1DDD4B6E00EFF692 /* SuccessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38D34EA1DDD4B6E00EFF692 /* SuccessLayer.swift */; };
 		C39C362C1DDC5B3600B95BCB /* SyncArrowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */; };
@@ -52,6 +55,9 @@
 		C328FD981DB8A70200D7351C /* ButtonInputTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonInputTextField.swift; sourceTree = "<group>"; };
 		C32A12211DDAE37200FD5F2B /* SingleLCDLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleLCDLayer.swift; sourceTree = "<group>"; };
 		C32A12231DDAE90900FD5F2B /* LCDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCDView.swift; sourceTree = "<group>"; };
+		C34768901DDEEDAA000FAFAB /* NavigationMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenu.swift; sourceTree = "<group>"; };
+		C34768921DDEEEA1000FAFAB /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		C37072701DDEA77C00C18D7A /* Counter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		C386F7F91DC1E8C8009E0AFB /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		C38D34EA1DDD4B6E00EFF692 /* SuccessLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessLayer.swift; sourceTree = "<group>"; };
 		C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncArrowLayer.swift; sourceTree = "<group>"; };
@@ -113,6 +119,8 @@
 				C3B42E061DC73D9B00FE4CAA /* Slides */,
 				C32A121C1DDABBFA00FD5F2B /* LCD */,
 				C39C362A1DDC545F00B95BCB /* SyncSuccessIcon */,
+				C370726F1DDEA76F00C18D7A /* Counter */,
+				C347688F1DDEED3F000FAFAB /* NavigationMenu */,
 				C302CA421DAF76AB00928F29 /* AppDelegate.swift */,
 				C302CA441DAF76AB00928F29 /* ViewController.swift */,
 				C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */,
@@ -163,6 +171,23 @@
 				C32A12231DDAE90900FD5F2B /* LCDView.swift */,
 			);
 			path = LCD;
+			sourceTree = "<group>";
+		};
+		C347688F1DDEED3F000FAFAB /* NavigationMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C34768901DDEEDAA000FAFAB /* NavigationMenu.swift */,
+				C34768921DDEEEA1000FAFAB /* ExampleViewController.swift */,
+			);
+			path = NavigationMenu;
+			sourceTree = "<group>";
+		};
+		C370726F1DDEA76F00C18D7A /* Counter */ = {
+			isa = PBXGroup;
+			children = (
+				C37072701DDEA77C00C18D7A /* Counter.swift */,
+			);
+			path = Counter;
 			sourceTree = "<group>";
 		};
 		C386F7F81DC1E8A4009E0AFB /* Volume */ = {
@@ -313,7 +338,9 @@
 			files = (
 				C38D34EB1DDD4B6E00EFF692 /* SuccessLayer.swift in Sources */,
 				C39C362C1DDC5B3600B95BCB /* SyncArrowLayer.swift in Sources */,
+				C37072711DDEA77C00C18D7A /* Counter.swift in Sources */,
 				C3C00C751DB610250057E059 /* NewtonCradle.swift in Sources */,
+				C34768911DDEEDAA000FAFAB /* NavigationMenu.swift in Sources */,
 				C302CA451DAF76AB00928F29 /* ViewController.swift in Sources */,
 				C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */,
 				C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */,
@@ -334,6 +361,7 @@
 				C3BF12211DC449A300BDCBD1 /* ButtonTouch.swift in Sources */,
 				C302CA5B1DAF7B4800928F29 /* SpinnerView.swift in Sources */,
 				C302CA591DAF7AF400928F29 /* ViewInfo.swift in Sources */,
+				C34768931DDEEEA1000FAFAB /* ExampleViewController.swift in Sources */,
 				C30F147E1DB46C4700314E6C /* GraphView.swift in Sources */,
 				C3BF12231DC4501500BDCBD1 /* CALayer+Extensions.swift in Sources */,
 			);

@@ -102,8 +102,9 @@ class ButtonTouch: AbstractAnimationView ,CAAnimationDelegate{
         
         layer.removeAllAnimations()
         
+        
         let fadeIn = AnimationHelper.animation(keyPath: "opacity", from: 0, to: 1, duration: duration * 0.3 ,removeOnCompletion: false)
-        let fadeOut = AnimationHelper.animation(keyPath: "opacity", from: 1, to: 0, duration: duration * 0.5)
+        let fadeOut = AnimationHelper.animation(keyPath: "opacity", from: 1, to: 0, duration: duration * 0.5 ,removeOnCompletion: false)
         fadeOut.beginTime = CACurrentMediaTime() + duration * 0.5
         fadeOut.setValue(layer, forKey: "targetLayer")
         fadeOut.delegate = self
