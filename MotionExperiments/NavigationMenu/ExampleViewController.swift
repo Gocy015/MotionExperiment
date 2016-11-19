@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExampleViewController: UIViewController {
+class ExampleViewController: UIViewController ,UIGestureRecognizerDelegate {
     
     var navigationMenu : NavigationMenu!
 
@@ -19,8 +19,15 @@ class ExampleViewController: UIViewController {
         self.title = "Navigation Menu"
         self.view.backgroundColor = UIColor.colorWithAbsolute(red: 22, green: 108, blue: 109, alpha: 1)
         
-        
+        /*
+         UIGestureRecognizer will break UITableView's event handling,
+         overriding hitTest won't work
+         so if your background view has any kind of UIGestureReognizer
+         implement the delegate and return navigationMenu.shouldReceiveGesture()
+         */
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        tap.delegate = self
+//        tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
@@ -43,6 +50,12 @@ class ExampleViewController: UIViewController {
         NSLog("Background was tapped !")
     }
 
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        
+        return navigationMenu.shouldReceiveGesture(touch: touch)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -52,5 +65,7 @@ class ExampleViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

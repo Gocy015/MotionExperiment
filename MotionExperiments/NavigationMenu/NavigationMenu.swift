@@ -11,7 +11,17 @@ import UIKit
 class NavigationMenu: UIView {
 
     
-    var maxPopupHeight : CGFloat = 0
+    var maxPopupHeight : CGFloat = 0{
+        didSet{
+            
+            
+            itemTableView.frame = CGRect(x: 0, y: self.bounds.height - maxPopupHeight, width: self.bounds.width, height: maxPopupHeight)
+            if !itemTableView.transform.isIdentity{
+                itemTableView.transform = CGAffineTransform(translationX: 0, y: maxPopupHeight)
+            }
+            
+        }
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -80,7 +90,8 @@ class NavigationMenu: UIView {
         
         itemTableView.backgroundColor = UIColor.white.withAlphaComponent(0.85)
         itemTableView.separatorColor = UIColor.black.withAlphaComponent(0.22)
-        itemTableView.frame = CGRect(x: 0, y: self.bounds.height, width: self.bounds.width, height: maxPopupHeight)
+        itemTableView.frame = CGRect(x: 0, y: self.bounds.height - maxPopupHeight, width: self.bounds.width, height: maxPopupHeight)
+        itemTableView.transform = CGAffineTransform(translationX: 0, y: maxPopupHeight)
         itemTableView.tableFooterView = UIView()
         
         itemTableView.contentInset = UIEdgeInsetsMake(buttonSize.height / 2, 0, 0, 0)
@@ -171,7 +182,6 @@ extension NavigationMenu {
         }
         
         
-        self.itemTableView.transform = .identity
         
         let buttonAnimDuration = self.tableUpDuration/1.05
         
@@ -191,7 +201,7 @@ extension NavigationMenu {
         
         let tableAnimator = UIViewPropertyAnimator(duration: self.tableUpDuration, controlPoint1: CGPoint(x:0.14,y:0.6), controlPoint2:  CGPoint(x:0.47,y:1.05), animations: {
             
-            self.itemTableView.transform = CGAffineTransform(translationX: 0, y: -self.maxPopupHeight)
+            self.itemTableView.transform = .identity
         })
         
         
@@ -213,7 +223,6 @@ extension NavigationMenu {
                 
                 cell.alpha = 1
             })
-            
             
             alphaAnimator.startAnimation(afterDelay: cellAnimationDelay +  Double(idx + 1) * self.durationBetween)
             
@@ -241,7 +250,8 @@ extension NavigationMenu {
         
         let tableAnimator = UIViewPropertyAnimator(duration: self.tableDownDuration, controlPoint1: CGPoint(x:0.1,y:0.7), controlPoint2:  CGPoint(x:0.22,y:1), animations: {
             
-            self.itemTableView.transform = .identity
+            
+            self.itemTableView.transform = CGAffineTransform(translationX: 0, y:self.maxPopupHeight)
         })
         
         
@@ -268,14 +278,17 @@ extension NavigationMenu {
 
 //MARK: - Hit Test
 extension NavigationMenu{
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        if self.controlButton.frame.contains(point){
-            return self.controlButton
+    func shouldReceiveGesture(touch:UITouch) -> Bool{
+        let point = touch.location(in: self)
+        
+        if self.controlButton.frame.contains(point) {
+            return false
         }
-        if !self.itemTableView.transform.isIdentity && point.y >= self.bounds.height - maxPopupHeight {
-            return self.itemTableView
+        if self.itemTableView.transform.isIdentity && self.itemTableView.frame.contains(point) {
+            return false
         }
-        return nil
+        
+        return true
     }
 }
 
