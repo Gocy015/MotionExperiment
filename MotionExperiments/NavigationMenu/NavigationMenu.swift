@@ -119,7 +119,7 @@ class NavigationMenu: UIView {
     //MARK: - Actions
     
     func controlButtonTapped(){
-        let goingToOpen = CATransform3DIsIdentity(arrowLayer.transform)
+        let goingToOpen = !self.itemTableView.transform.isIdentity
         if goingToOpen {
             animateTableShow()
         }else{

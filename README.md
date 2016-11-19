@@ -21,11 +21,12 @@ This is **NOT** an official copy ,all the timing functions & paths are from wild
 <del>13.Syncing/Success Icon</del>
 
 
-14.Counter
+14.Counter (I can't seem to achieve this)
 
 15.Safari Link (I'll try ,no gurarantees)
 
-16.Navigation Menu
+<del>16.Navigation Menu</del>
+
 
 17.Play/Pause icon
 
