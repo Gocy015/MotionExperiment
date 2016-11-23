@@ -6,32 +6,15 @@ This is **NOT** an official copy ,all the timing functions & paths are from wild
 
 
 
-### To dos
-
+### This animation group is mostly done , **except :**
+ 
 08.Photo Loading (You can actually find a tutorial at raywenderlich [here](https://www.raywenderlich.com/94302/implement-circular-image-loader-animation-cashapelayer))
 
-09.Logo(I don't think im gonna finish this)
+09.Logo(With this complicity ,it's more appropriate to develop a video clip)
+ 
+12.New Tweet(Quite easy , not going to do this) 
 
-<del>11.LCD</del>
-
-
-12.New Tweet(Quite easy , not going to do this)
-
-
-<del>13.Syncing/Success Icon</del>
-
-
-14.Counter (I can't seem to achieve this)
-
-15.Safari Link (I'll try ,no gurarantees)
-
-<del>16.Navigation Menu</del>
-
-
-17.Play/Pause icon
-
-18.Tap
-
+15.Safari Link (This is based on macOS)
 
 ### Previews
 
@@ -44,6 +27,11 @@ This is **NOT** an official copy ,all the timing functions & paths are from wild
 #### Slides
 ![](Images/Slides.gif)
 
+#### Navigation Menu
+![](Images/Menu.gif)
+
+#### Tap
+![](Images/Tap.gif)
 
 For more detail ,plz download the project.
 Feel free to start a PR or an issue for any better implementations or problems.

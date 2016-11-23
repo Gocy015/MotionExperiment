@@ -106,7 +106,7 @@ class SyncSuccessIcon: AbstractAnimationView ,CAAnimationDelegate{
             spinAnimation.timingFunction = CAMediaTimingFunction(controlPoints: 0.54, 1.52, 0.57, 1.03)
             spinAnimation.setValue(true, forKey: spinCompleteAnimationKey)
             containerLayer.add(spinAnimation, forKey: spinCompleteAnimationKey)
-            successIcon.animateComplete(delay:duration/4 ,withDuration: duration/3)
+            successIcon.animateComplete(delay:duration / 6 ,withDuration: duration/4)
         }
     }
 }

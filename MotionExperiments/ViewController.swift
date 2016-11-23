@@ -106,11 +106,17 @@ class ViewController: UIViewController ,UITableViewDelegate ,UITableViewDataSour
         let sync = ViewInfo("13 - Syncing/Success Icon",viewClass:SyncSuccessIcon.self)
         data.append(sync)
         
-        let counter = ViewInfo("14 - Counter(Sorry , i'm not able to achieve this)" ,viewClass:Counter.self)
-        data.append(counter)
+//        let counter = ViewInfo("14 - Counter(Sorry , i'm not able to achieve this)" ,viewClass:Counter.self)
+//        data.append(counter)
         
         let menu = ViewInfo("16 - Navigation Menu",viewControllerClass:ExampleViewController.self)
         data.append(menu)
+        
+        let playpause = ViewInfo("17 - Play/Pause icon transition" ,viewClass:PlayPauseIcon.self)
+        data.append(playpause)
+        
+        let tap = ViewInfo("18 - Tap" ,viewClass:Tap.self)
+        data.append(tap)
         
         tableView.reloadData()
     }

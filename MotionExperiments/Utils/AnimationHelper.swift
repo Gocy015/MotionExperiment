@@ -10,12 +10,19 @@ import UIKit
 
 class AnimationHelper: NSObject {
     
+    static var universalTimingFunction:CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    
+    static func resetTimingFunction(){
+        self.universalTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    }
+    
+    
     static func animation(keyPath:String ,from:Any? ,to:Any? ,duration :TimeInterval,removeOnCompletion:Bool = true) -> CABasicAnimation{
         let anim = CABasicAnimation(keyPath:keyPath)
         anim.duration = duration
         anim.fromValue = from
         anim.toValue = to
-        
+        anim.timingFunction = universalTimingFunction
         if !removeOnCompletion{
             anim.isRemovedOnCompletion = false
             anim.fillMode = kCAFillModeForwards
@@ -29,7 +36,7 @@ class AnimationHelper: NSObject {
         anim.values = values
         anim.keyTimes = keyTimes
         anim.duration = duration
-        
+        anim.timingFunction = universalTimingFunction
         if !removeOnCompletion{
             anim.isRemovedOnCompletion = false
             anim.fillMode = kCAFillModeForwards

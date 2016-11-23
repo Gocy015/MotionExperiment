@@ -27,6 +27,7 @@
 		C39C362C1DDC5B3600B95BCB /* SyncArrowLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */; };
 		C39C362E1DDC5F8300B95BCB /* SyncSuccessIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39C362D1DDC5F8300B95BCB /* SyncSuccessIcon.swift */; };
 		C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39FD21D1DCB28890065A0E2 /* GradientView.swift */; };
+		C3ACB45A1DE2918300BE677F /* PlayPauseIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ACB4591DE2918300BE677F /* PlayPauseIcon.swift */; };
 		C3B42E081DC73DAC00FE4CAA /* SlidesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */; };
 		C3B42E0A1DC73ECF00FE4CAA /* SlideableViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */; };
 		C3B42E0C1DC7467500FE4CAA /* SlidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B42E0B1DC7467500FE4CAA /* SlidesViewController.swift */; };
@@ -35,6 +36,8 @@
 		C3C00C691DB5C3EB0057E059 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C681DB5C3EB0057E059 /* UIView+Extensions.swift */; };
 		C3C00C751DB610250057E059 /* NewtonCradle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C741DB610250057E059 /* NewtonCradle.swift */; };
 		C3C00C781DB629D40057E059 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C00C771DB629D40057E059 /* AddViewController.swift */; };
+		C3C09D711DE3E81500BC4708 /* Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C09D701DE3E81500BC4708 /* Tap.swift */; };
+		C3C09D731DE3EBE300BC4708 /* TapAnimationLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C09D721DE3EBE300BC4708 /* TapAnimationLayer.swift */; };
 		C3E771C31DAF7C1B00BD4992 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */; };
 		C3E771C61DAF80AF00BD4992 /* AbstractAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E771C51DAF80AF00BD4992 /* AbstractAnimationView.swift */; };
 		C3E771C91DAF81D300BD4992 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E771C81DAF81D300BD4992 /* AnimationHelper.swift */; };
@@ -63,6 +66,7 @@
 		C39C362B1DDC5B3600B95BCB /* SyncArrowLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncArrowLayer.swift; sourceTree = "<group>"; };
 		C39C362D1DDC5F8300B95BCB /* SyncSuccessIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncSuccessIcon.swift; sourceTree = "<group>"; };
 		C39FD21D1DCB28890065A0E2 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		C3ACB4591DE2918300BE677F /* PlayPauseIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayPauseIcon.swift; sourceTree = "<group>"; };
 		C3B42E071DC73DAC00FE4CAA /* SlidesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesView.swift; sourceTree = "<group>"; };
 		C3B42E091DC73ECF00FE4CAA /* SlideableViewContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideableViewContainer.swift; sourceTree = "<group>"; };
 		C3B42E0B1DC7467500FE4CAA /* SlidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidesViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 		C3C00C681DB5C3EB0057E059 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C3C00C741DB610250057E059 /* NewtonCradle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewtonCradle.swift; sourceTree = "<group>"; };
 		C3C00C771DB629D40057E059 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		C3C09D701DE3E81500BC4708 /* Tap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tap.swift; sourceTree = "<group>"; };
+		C3C09D721DE3EBE300BC4708 /* TapAnimationLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapAnimationLayer.swift; sourceTree = "<group>"; };
 		C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		C3E771C51DAF80AF00BD4992 /* AbstractAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractAnimationView.swift; sourceTree = "<group>"; };
 		C3E771C81DAF81D300BD4992 /* AnimationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationHelper.swift; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 				C39C362A1DDC545F00B95BCB /* SyncSuccessIcon */,
 				C370726F1DDEA76F00C18D7A /* Counter */,
 				C347688F1DDEED3F000FAFAB /* NavigationMenu */,
+				C3ACB4581DE2915B00BE677F /* PlayPauseIcon */,
+				C3C09D6F1DE3E80B00BC4708 /* Tap */,
 				C302CA421DAF76AB00928F29 /* AppDelegate.swift */,
 				C302CA441DAF76AB00928F29 /* ViewController.swift */,
 				C3E771C21DAF7C1B00BD4992 /* ContainerViewController.swift */,
@@ -208,6 +216,14 @@
 			path = SyncSuccessIcon;
 			sourceTree = "<group>";
 		};
+		C3ACB4581DE2915B00BE677F /* PlayPauseIcon */ = {
+			isa = PBXGroup;
+			children = (
+				C3ACB4591DE2918300BE677F /* PlayPauseIcon.swift */,
+			);
+			path = PlayPauseIcon;
+			sourceTree = "<group>";
+		};
 		C3B42E061DC73D9B00FE4CAA /* Slides */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +259,15 @@
 			);
 			name = Add;
 			path = NewtonCradle/Add;
+			sourceTree = "<group>";
+		};
+		C3C09D6F1DE3E80B00BC4708 /* Tap */ = {
+			isa = PBXGroup;
+			children = (
+				C3C09D701DE3E81500BC4708 /* Tap.swift */,
+				C3C09D721DE3EBE300BC4708 /* TapAnimationLayer.swift */,
+			);
+			path = Tap;
 			sourceTree = "<group>";
 		};
 		C3E771C41DAF809D00BD4992 /* Abstract */ = {
@@ -345,6 +370,7 @@
 				C39FD21E1DCB28890065A0E2 /* GradientView.swift in Sources */,
 				C328FD991DB8A70200D7351C /* ButtonInputTextField.swift in Sources */,
 				C32A12241DDAE90900FD5F2B /* LCDView.swift in Sources */,
+				C3ACB45A1DE2918300BE677F /* PlayPauseIcon.swift in Sources */,
 				C3C00C781DB629D40057E059 /* AddViewController.swift in Sources */,
 				C32A12221DDAE37200FD5F2B /* SingleLCDLayer.swift in Sources */,
 				C3C00C691DB5C3EB0057E059 /* UIView+Extensions.swift in Sources */,
@@ -362,6 +388,8 @@
 				C302CA5B1DAF7B4800928F29 /* SpinnerView.swift in Sources */,
 				C302CA591DAF7AF400928F29 /* ViewInfo.swift in Sources */,
 				C34768931DDEEEA1000FAFAB /* ExampleViewController.swift in Sources */,
+				C3C09D711DE3E81500BC4708 /* Tap.swift in Sources */,
+				C3C09D731DE3EBE300BC4708 /* TapAnimationLayer.swift in Sources */,
 				C30F147E1DB46C4700314E6C /* GraphView.swift in Sources */,
 				C3BF12231DC4501500BDCBD1 /* CALayer+Extensions.swift in Sources */,
 			);
