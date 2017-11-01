@@ -54,7 +54,7 @@ class SearchIcon: AbstractAnimationView {
         self.animationLayer.addSublayer(circleLayer)
         
         //close 
-        let offset = CGFloat(cos(M_PI_4)) * length/2
+        let offset = CGFloat(cos(Double.pi/4)) * length/2
         let topLeft = CGPoint(x: center.x - offset, y: center.y - offset),
             topRight = CGPoint(x: center.x + offset, y: center.y - offset),
             bottomLeft = CGPoint(x: center.x - offset, y: center.y + offset),
@@ -107,7 +107,7 @@ class SearchIcon: AbstractAnimationView {
     }
     
     
-    func didTap(tap:UITapGestureRecognizer) {
+    @objc func didTap(tap:UITapGestureRecognizer) {
         self.change()
     }
     
@@ -122,7 +122,7 @@ class SearchIcon: AbstractAnimationView {
         if inSearch {
             
             animationLayer.removeAllAnimations()
-            let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: M_PI_4, to: 0, duration: duration)
+            let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: Double.pi/4, to: 0, duration: duration)
             rotate.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             self.animationLayer.add(rotate, forKey: "searchicon.rotateright")
             
@@ -156,7 +156,7 @@ class SearchIcon: AbstractAnimationView {
         }else{
             
             animationLayer.removeAllAnimations()
-            let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: 0, to: M_PI_4, duration: duration ,removeOnCompletion: false)
+            let rotate = AnimationHelper.animation(keyPath: "transform.rotation", from: 0, to: Double.pi/4, duration: duration ,removeOnCompletion: false)
             rotate.timingFunction = CAMediaTimingFunction(controlPoints: 0, 0, 0, 1)
             self.animationLayer.add(rotate, forKey: "searchicon.rotateleft")
             

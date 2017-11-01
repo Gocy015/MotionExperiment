@@ -223,11 +223,11 @@ class SlidesView: UIView {
     
     //MARK: - Actions
     
-    func goPrev(){
+    @objc func goPrev(){
         NSLog("go prev")
         gotoSlide(to: currentSlideIndex - 1)
     }
-    func goNext(){
+    @objc func goNext(){
         NSLog("go next")
         gotoSlide(to: currentSlideIndex + 1)
     }

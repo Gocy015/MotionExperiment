@@ -372,11 +372,11 @@ class Volume: AbstractAnimationView {
         trumpetLayer.transform = transform
     }
     
-    func volumeUp(){
+    @objc func volumeUp(){
         currentVolume += 1
     }
     
-    func volumeDown(){
+    @objc func volumeDown(){
         currentVolume -= 1
     }
 

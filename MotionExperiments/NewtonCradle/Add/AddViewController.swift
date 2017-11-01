@@ -37,7 +37,7 @@ class AddViewController: UIViewController {
     }
     
     
-    func bgTapped(){
+    @objc func bgTapped(){
         NSLog("Background tapped")
     }
 

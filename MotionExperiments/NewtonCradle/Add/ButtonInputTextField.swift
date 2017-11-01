@@ -72,7 +72,7 @@ class ButtonInputTextField: UIView ,CAAnimationDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func keyboardWillShow(noti:NSNotification){
+    @objc func keyboardWillShow(noti:NSNotification){
         if let keyboardHeightVal = noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue{
             let keyboardHeight = keyboardHeightVal.cgRectValue.height
             
@@ -80,7 +80,7 @@ class ButtonInputTextField: UIView ,CAAnimationDelegate {
         }
     }
     
-    func keyboardWillHide(noti:NSNotification){
+    @objc func keyboardWillHide(noti:NSNotification){
         shrink()
     }
     
@@ -88,7 +88,7 @@ class ButtonInputTextField: UIView ,CAAnimationDelegate {
         self.backgroundColor = UIColor.clear
         
         button.frame = self.buttonFrame
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: UIFont.Weight.light)
         button.setTitle("+", for: .normal)
         
         button.contentVerticalAlignment = .top
@@ -101,8 +101,8 @@ class ButtonInputTextField: UIView ,CAAnimationDelegate {
         button.backgroundColor = UIColor.clear
         
         
-        textField.attributedPlaceholder = NSAttributedString(string: "Do something", attributes: [NSForegroundColorAttributeName : UIColor.lightGray , NSFontAttributeName : UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)])
-        textField.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
+        textField.attributedPlaceholder = NSAttributedString(string: "Do something", attributes: [NSAttributedStringKey.foregroundColor : UIColor.lightGray , NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)])
+        textField.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         textField.textColor = UIColor.white
 //        textField.frame = buttonFrame
         
@@ -281,7 +281,7 @@ class ButtonInputTextField: UIView ,CAAnimationDelegate {
         
     }
     
-    func buttonClick(){
+    @objc func buttonClick(){
         
         if isExpanded {
             UIView.animate(withDuration: 0.7 * duration, animations: {

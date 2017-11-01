@@ -111,7 +111,7 @@ class NavigationMenu: UIView {
     
     //MARK: - Actions
     
-    func controlButtonTapped(){
+    @objc func controlButtonTapped(){
         let goingToOpen = !self.itemTableView.transform.isIdentity
         if goingToOpen {
             animateTableShow()
@@ -154,7 +154,7 @@ extension NavigationMenu : UITableViewDataSource ,UITableViewDelegate{
         
         cell.backgroundColor = .clear
         
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: UIFontWeightLight)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light)
         
         cell.textLabel?.text = items[indexPath.row]
         

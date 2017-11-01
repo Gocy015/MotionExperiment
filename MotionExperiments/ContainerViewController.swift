@@ -61,7 +61,7 @@ class ContainerViewController: UIViewController ,AnimationViewDelegate {
         } 
     }
 
-    func startAnimationLoop(){
+    @objc func startAnimationLoop(){
         if let ct = contentView{
             ct.start()
             if ct.timeUntilStop > 0 {

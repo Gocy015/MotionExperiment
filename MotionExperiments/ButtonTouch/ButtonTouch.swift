@@ -123,7 +123,7 @@ class ButtonTouch: AbstractAnimationView ,CAAnimationDelegate{
     
     func addButton(){
         let button = UIButton()
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: UIFontWeightLight)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: UIFont.Weight.light)
         button.setTitleColor(color, for: .normal)
         button.setTitle("+", for: .normal)
         
@@ -166,7 +166,7 @@ class ButtonTouch: AbstractAnimationView ,CAAnimationDelegate{
         return img
     }
     
-    func buttonTapped(){
+    @objc func buttonTapped(){
         showTapAnimation(version: hits)
         hits += 1
         hits = hits % animLayers.count

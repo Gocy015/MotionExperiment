@@ -66,7 +66,7 @@ class NewtonCradle: AbstractAnimationView ,CAAnimationDelegate{
     func rotate(_ multiplier : Double){
         let duration = 3 * self.duration
         let from = self.animationLayer.value(forKey: "transform.rotation")
-        let rotateAnim = AnimationHelper.animation(keyPath: "transform.rotation", from: from , to: multiplier * M_PI * 2, duration: duration ,removeOnCompletion: true)
+        let rotateAnim = AnimationHelper.animation(keyPath: "transform.rotation", from: from , to: multiplier * Double.pi * 2, duration: duration ,removeOnCompletion: true)
         rotateAnim.timingFunction = CAMediaTimingFunction(controlPoints: 0,0.65,0.55,1)
         self.animationLayer.add(rotateAnim, forKey: "newtoncradle.rotate")
     }

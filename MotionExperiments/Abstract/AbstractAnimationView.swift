@@ -43,7 +43,7 @@ class AbstractAnimationView: UIView {
         isAnimating = true
     }
     
-    func stop(){
+    @objc func stop(){
         isAnimating = false
     }
     

@@ -96,7 +96,7 @@ class PlayPauseIcon: AbstractAnimationView {
         }
     }
     
-    func viewTapped(){
+    @objc func viewTapped(){
         isPaused = !isPaused
        
         isPaused ? showPause() : showPlay()

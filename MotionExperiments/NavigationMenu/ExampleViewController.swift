@@ -46,7 +46,7 @@ class ExampleViewController: UIViewController ,UIGestureRecognizerDelegate {
     }
     
     
-    func didTap(tap:UITapGestureRecognizer) {
+    @objc func didTap(tap:UITapGestureRecognizer) {
         NSLog("Background was tapped !")
     }
 
